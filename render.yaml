@@ -3,5 +3,8 @@ services:
     name: telegram-affiliate-bot
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      echo "python-3.11.9" > runtime.txt
+      pip install --upgrade pip
+      pip install -r requirements.txt
     startCommand: python bot.py
